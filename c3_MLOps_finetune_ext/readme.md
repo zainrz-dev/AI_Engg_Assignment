@@ -1,14 +1,35 @@
-# Transformer Fine-Tuning (DistilBERT)
+🔹 Task 3: MLOps Workflow (Docker + CI/CD)
+🎯 Objective
 
-## Steps
+Create a reproducible and automated workflow for building and deploying the model.
 
-1. Install dependencies
-pip install -r requirements.txt
+🐳 Dockerization
+Containerized inference service
+Ensures environment consistency across systems
+Includes:
+Dependencies
+Model artifacts
+API server
+🔄 CI/CD Pipeline
 
-2. Add your dataset to data/dataset.csv
+Implemented using GitHub Actions:
 
-3. Run training
-cd src
-python train.py
+Pipeline Steps:
+Code linting
+Unit testing
+Docker image build
+(Extendable) Deployment
+📦 Model Versioning Strategy
+Version control via:
+Git (code)
+Model artifacts stored with version tags
+Suggested improvements:
+Use MLflow or DVC for full lifecycle tracking
+🔁 Automated Retraining (Conceptual Design)
 
-4. Model will be saved in /model
+To handle model drift:
+
+Monitor performance metrics (accuracy, F1, etc.)
+Trigger retraining when performance drops below threshold
+Retrain pipeline runs automatically
+Deploy updated model
